@@ -1,0 +1,10 @@
+[
+  { "name": "Wireless headphones", "shop": "Frank Shop", "price": "$48", "category": "Electronics", "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=720&q=80" },
+  { "name": "Everyday tote", "shop": "Friends & Sons", "price": "$24", "category": "Fashion", "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=720&q=80" },
+  { "name": "Ceramic table lamp", "shop": "Nile Home", "price": "$65", "category": "Home", "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=720&q=80" },
+  { "name": "Classic wristwatch", "shop": "Friends & Sons", "price": "$82", "category": "Fashion", "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=720&q=80" },
+  { "name": "Compact speaker", "shop": "Frank Shop", "price": "$39", "category": "Electronics", "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=720&q=80" },
+  { "name": "Woven storage basket", "shop": "Nile Home", "price": "$32", "category": "Home", "image": "https://images.unsplash.com/photo-1593085260707-5377ba37f868?auto=format&fit=crop&w=720&q=80" },
+  { "name": "Leather card holder", "shop": "Friends & Sons", "price": "$18", "category": "Fashion", "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=720&q=80" },
+  { "name": "Portable power bank", "shop": "Frank Shop", "price": "$29", "category": "Electronics", "image": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=720&q=80" }
+]

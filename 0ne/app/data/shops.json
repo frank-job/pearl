@@ -1,0 +1,5 @@
+[
+  { "address": "Shop 001N", "name": "Frank Shop", "seller": "Frank M.", "category": "Electronics & everyday goods", "type": "Electronics", "initials": "F", "description": "Everyday tech, carefully picked.", "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80", "live": true, "rating": 4.8, "sales": 1240 },
+  { "address": "Shop 002N", "name": "Friends & Sons", "seller": "Aisha & Co.", "category": "Fashion & accessories", "type": "Fashion", "initials": "F+S", "description": "Useful pieces with a timeless feel.", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80", "live": true, "rating": 4.6, "sales": 980 },
+  { "address": "Shop 014N", "name": "Nile Home", "seller": "Nile H.", "category": "Home, living & decor", "type": "Home", "initials": "NH", "description": "Thoughtful details for your space.", "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80", "live": false, "rating": 4.9, "sales": 760 }
+]
