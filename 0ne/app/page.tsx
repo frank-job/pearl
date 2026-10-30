@@ -18,6 +18,7 @@ export default function Welcome() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [stats, setStats] = useState<Stats | null>(null);
+  const [loading, setLoading] = useState(true);
   const [pulse, setPulse] = useState(false);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function Welcome() {
       try {
         const res = await fetch("/api/plaza", { cache: "no-store" });
         const data = (await res.json()) as Stats;
-        if (alive) { setStats(data); setPulse(true); setTimeout(() => setPulse(false), 600); }
+        if (alive) { setStats(data); setPulse(true); setTimeout(() => setPulse(false), 600); setLoading(false); }
       } catch {}
     };
     load();
@@ -140,22 +141,32 @@ export default function Welcome() {
 
         {/* Real-time stats */}
         <section className="grid gap-4 sm:grid-cols-3 mb-4 animate-fade-in">
-          {[
-            { label: "Shops open", value: stats?.shopsOpen, icon: Store },
-            { label: "Buyers active", value: stats?.activeBuyers, icon: Users },
-            { label: "Products listed", value: stats?.productsListed, icon: ShoppingBag },
-          ].map((s) => (
-            <div key={s.label} className="flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-5 transition hover:border-blue-700/40 hover:shadow-md">
-              <div className="grid size-11 place-items-center rounded-xl bg-blue-700 text-white">
-                <s.icon size={20} />
-              </div>
-              <div>
-                <p className="text-2xl font-bold tracking-tight">{s.value ?? "—"}</p>
-                <p className="text-xs uppercase tracking-wider text-black/50">{s.label}</p>
-              </div>
-              <Activity size={14} className="ml-auto text-blue-700 animate-pulse" />
-            </div>
-          ))}
+          {loading
+            ? Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-5 animate-pulse">
+                  <div className="size-11 rounded-xl bg-black/10" />
+                  <div className="flex-1 space-y-2">
+                    <div className="h-6 w-16 rounded bg-black/10" />
+                    <div className="h-3 w-24 rounded bg-black/10" />
+                  </div>
+                </div>
+              ))
+            : [
+                { label: "Shops open", value: stats?.shopsOpen, icon: Store },
+                { label: "Buyers active", value: stats?.activeBuyers, icon: Users },
+                { label: "Products listed", value: stats?.productsListed, icon: ShoppingBag },
+              ].map((s) => (
+                <div key={s.label} className="flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-5 transition hover:border-blue-700/40 hover:shadow-md">
+                  <div className="grid size-11 place-items-center rounded-xl bg-blue-700 text-white">
+                    <s.icon size={20} />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold tracking-tight">{s.value ?? "—"}</p>
+                    <p className="text-xs uppercase tracking-wider text-black/50">{s.label}</p>
+                  </div>
+                  <Activity size={14} className="ml-auto text-blue-700 animate-pulse" />
+                </div>
+              ))}
         </section>
 
         {/* Products marquee */}
